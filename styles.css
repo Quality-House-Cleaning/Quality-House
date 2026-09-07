@@ -142,3 +142,19 @@
 .social-icons a:nth-child(3) svg{width:21px;height:21px}
 @media(max-width:1050px){.footer-grid{grid-template-columns:1fr 1fr;gap:48px}.footer-grid>div:first-child{grid-column:auto}}
 @media(max-width:560px){.footer-grid{grid-template-columns:1fr;gap:36px}.social-icons a{width:44px;height:44px}.footer-follow .follow-note{max-width:none}}
+
+/* 15 Footer social layout correction — horizontal branded icons under first column */
+.footer-grid{grid-template-columns:1.35fr .8fr 1fr;gap:72px}
+.footer-brand{display:flex;flex-direction:column}
+.footer-follow{margin-top:48px;min-width:0}
+.footer-follow h4{margin:0 0 9px}
+.footer-follow .follow-note{max-width:none;margin:0 0 15px;color:#9fb0c1;font-size:12px}
+.social-icons{display:flex!important;flex-direction:row!important;align-items:center;gap:18px;height:44px}
+.social-icons a{display:flex!important;align-items:center;justify-content:center;width:40px!important;height:40px!important;min-width:40px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;overflow:visible;transform:none}
+.social-icons a:hover{transform:translateY(-2px)}
+.social-icons svg{display:block!important;width:38px!important;height:38px!important;max-width:38px!important;max-height:38px!important}
+.social-icons .facebook svg path{fill:#fff}
+.social-icons .instagram svg{width:38px!important;height:38px!important}
+.social-icons .google svg{width:38px!important;height:38px!important}
+@media(max-width:820px){.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.footer-follow{margin-top:30px}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.footer-follow{margin-top:28px}.social-icons{gap:17px}}
