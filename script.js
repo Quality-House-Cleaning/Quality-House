@@ -2,33 +2,10 @@ const menuButton=document.querySelector('.menu-toggle'),nav=document.querySelect
 const sections=[...document.querySelectorAll('main section[id]')],links=[...document.querySelectorAll('.main-nav a')];const activeObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}})},{rootMargin:'-35% 0px -55% 0px'});sections.forEach(s=>activeObserver.observe(s));
 const params=new URLSearchParams(window.location.search);if(params.get('submitted')==='1'){const success=document.getElementById('form-success');if(success){success.hidden=false;success.scrollIntoView({behavior:'smooth',block:'center'})}}
 
-// Keep all image requests on the GitHub Pages origin. Some browsers/privacy
-// settings block raw.githubusercontent.com, which was causing the gray placeholders.
-const cacheBust='?v=20260906-1946';
-
-const heroImage=document.querySelector('.hero-image img');
-if(heroImage){
-  heroImage.src='assets/hero.webp'+cacheBust;
-  heroImage.alt='Bright Palmer Lake living room with mountain views';
-}
-
+// The hero and kitchen images are embedded directly in index.html as data URLs.
+// Only the bathroom image remains a normal same-origin asset.
 const aboutImage=document.querySelector('.about-image img');
 if(aboutImage){
-  aboutImage.src='assets/about-ref.webp'+cacheBust;
+  aboutImage.src='assets/about-ref.webp?v=20260906-1955';
   aboutImage.alt='Freshly cleaned bathroom counter with folded towels';
-}
-
-const kitchenImage=document.querySelector('.arrival-banner img');
-if(kitchenImage){
-  fetch('assets/kitchen-banner-tiny.webp.b64'+cacheBust,{cache:'no-store'})
-    .then(r=>{if(!r.ok)throw new Error('image data unavailable');return r.text()})
-    .then(t=>{
-      const b64=t.replace(/\s+/g,'');
-      kitchenImage.onerror=()=>{kitchenImage.onerror=null;kitchenImage.src='assets/hero.webp'+cacheBust};
-      kitchenImage.src='data:image/webp;base64,'+b64;
-      kitchenImage.alt='Bright modern kitchen overlooking the mountains';
-    })
-    .catch(()=>{
-      kitchenImage.src='assets/hero.webp'+cacheBust;
-    });
 }
