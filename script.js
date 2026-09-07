@@ -2,8 +2,7 @@ const menuButton=document.querySelector('.menu-toggle'),nav=document.querySelect
 const sections=[...document.querySelectorAll('main section[id]')],links=[...document.querySelectorAll('.main-nav a')];const activeObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}})},{rootMargin:'-35% 0px -55% 0px'});sections.forEach(s=>activeObserver.observe(s));
 const params=new URLSearchParams(window.location.search);if(params.get('submitted')==='1'){const success=document.getElementById('form-success');if(success){success.hidden=false;success.scrollIntoView({behavior:'smooth',block:'center'})}}
 
-// The hero and kitchen images are embedded directly in index.html as data URLs.
-// Only the bathroom image remains a normal same-origin asset.
+// Hero, banner, and bathroom photos are normal same-origin assets for reliable GitHub Pages rendering.
 const aboutImage=document.querySelector('.about-image img');
 if(aboutImage){
   aboutImage.src='assets/about-ref.webp?v=20260906-1955';
