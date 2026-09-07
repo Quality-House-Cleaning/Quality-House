@@ -12,3 +12,5 @@
 .cta-band{background:#0c2238;color:#fff;padding:62px 0}.cta-band-inner{display:flex;align-items:center;justify-content:space-between;gap:40px}.cta-band .eyebrow{margin-bottom:8px}.cta-band h2{margin:0;font-size:clamp(32px,4vw,48px);letter-spacing:-.035em;line-height:1}.cta-actions{display:flex;align-items:center;gap:20px;flex-shrink:0}.cta-phone{font-weight:800;font-size:14px;border-bottom:1px solid rgba(255,255,255,.5);padding:5px 0}.price-card .price{font-size:30px}.price-card small{min-height:16px}.estimate-form textarea{resize:vertical;min-height:112px}
 @media(max-width:820px){.main-nav a.active:after{bottom:-4px}.cta-band-inner{align-items:flex-start;flex-direction:column}.cta-actions{width:100%;flex-wrap:wrap}}
 @media(max-width:560px){.cta-band{padding:48px 0}.cta-actions{align-items:stretch;flex-direction:column}.cta-phone{text-align:center;padding:12px}}
+
+.form-success{margin:0 0 22px;padding:15px 17px;border:1px solid #a9d8c0;border-radius:12px;background:#effaf4;color:#174c32;font-size:14px;font-weight:800}.form-success[hidden]{display:none}
